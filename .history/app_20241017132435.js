@@ -3,7 +3,6 @@ const {
   convertAndValidateNumsArray,
   calculateMean,
   calculateMedian,
-  calculateMode,
 } = require("./helpers");
 const app = express();
 
@@ -37,19 +36,7 @@ app.get("/median", (req, res) => {
   }
 });
 
-//Mode route
-app.get("/mode", (req, res) => {
-  try {
-    if (!req.query.nums) {
-      throw new Error("nums are required.");
-    }
-    const nums = convertAndValidateNumsArray(req.query.nums);
-    const mode = calculateMode(nums);
-    return res.json({ operation: "mode", value: mode });
-  } catch (err) {
-    return res.status(400).json({ error: err.message });
-  }
-});
+//
 
 const PORT = 3000;
 app.listen(PORT, () => {

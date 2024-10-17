@@ -25,14 +25,4 @@ function calculateMode(nums) {
   return mode;
 }
 
-function convertAndValidateNumsArray(numsStr){
-  const nums = numsStr.split(',').map(num=>{
-    if(isNaN(Number(num))) {
-      throw new Error(`'${num}' is not a valid number.`);
-    }
-    return Number(num);
-  })
-  return nums;
-}
-
-module.exports= {calculateMean, calculateMedian, calculateMode, convertAndValidateNumsArray};
+function convertAndValidateNumsArray(numsStr)
